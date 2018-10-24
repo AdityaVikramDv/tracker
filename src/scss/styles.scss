@@ -1,0 +1,93 @@
+$body-bg: #ffffff;
+
+$headingColor: #333333;
+
+$textColor: #211f53;
+
+$anchorColor: #0066b3;
+
+$themeColor: #26a69a;
+
+.loader {
+  z-index: 9999;
+  display: block;
+  opacity: 0.6;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+.carousel {
+  height: 200px !important;
+}
+.multiSelectDates {
+  background-color: #26a69a !important;
+  color: #fff !important;
+}
+
+#addMember, #add_new_member {
+  display: none;
+}
+
+.drbanner {
+  display: none !important;;
+}
+
+.drbanner_show {
+  display: block !important;;
+}
+
+.leavesPlaceholder {
+  display: none;
+}
+
+.quick_action .fixed-action-btn {
+  top: 2% !important;
+  bottom: auto;
+}
+
+body {
+  background: $body-bg;
+}
+
+.themeColor {
+  background-color: $themeColor !important;
+}
+
+.myContainer {
+  width: -webkit-calc(100% - 300px);
+  width: -moz-calc(100% - 300px);
+  width: calc(100% - 300px);
+  margin-left: 300px;
+}
+
+.clearSearch {
+  margin: 1rem 0;
+  display: none;
+}
+
+.sideNav_bg {
+  background-color: $themeColor !important;
+}
+
+.search_icon, .clearSearch_icon {
+  cursor: pointer;
+}
+
+.clearSearch {
+
+}
+
+.header, .main, .footer {
+
+}
+
+@media only screen and (max-width: 992px) {
+  .header, .main, .footer {
+
+  }
+}

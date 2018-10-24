@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tracker</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"></link>
+    <link rel="stylesheet" href="css/materialize.min.css"></link>
+</head>
+<body>
+<div class="myContainer">
+
+    <div class="loader">
+        <div class="progress black white-text" style="top:45%">
+
+            <div class="indeterminate green accent-3">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="loginModal" id="authenticator">
+
+        <!-- Modal Structure -->
+        <div id="modalLogin" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" type="text" class="validate">
+                        <label for="username">User Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <button id="loginOk" data-target="modalLogin" class="btn  modal-trigger hoverable right">Login
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="addMembersModal" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">star</i>
+                        <input id="p_empId" type="text" class="validate" required="" aria-required="true">
+                        <label for="p_empId">Employee ID</label>
+                    </div>
+                    <div class="col s6">
+                        <div class="input-field col s12">
+                            <select>
+                                <optgroup label="FM">
+                                    <option value="FM">FM</option>
+                                    <option value="Dhruva">Dhruva</option>
+                                    <option value="Jupiter">Jupiter</option>
+                                    <option value="Game Of Rules">Game Of Rules</option>
+                                </optgroup>
+                                <optgroup label="PKI">
+                                    <option value="pki1">PKI 1</option>
+                                    <option value="pki2">PKI 2</option>
+                                </optgroup>
+                            </select>
+                            <label>Team</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="p_firstName" type="text" class="validate" required="" aria-required="true">
+                        <label for="p_firstName">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="p_lastName" type="text" class="validate" required="" aria-required="true">
+                        <label for="p_lastName">Last Name</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+
+                        <input id="p_email" type="email" class="validate" required="" aria-required="true">
+                        <label for="p_email">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="p_phone" type="tel" class="validate">
+                        <label for="p_phone">Mobile</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <button id="addMember"
+                            class="btn themeColor hoverable right">Add
+                        <i class="material-icons right">done</i>
+                    </button>
+
+                    <button id="add_new_member"
+                            class="btn themeColor hoverable right">Add & New
+                        <i class="material-icons right">done_all</i>
+                    </button>
+
+                    <button id="validateMember" class="btn hoverable themeColor right">Validate
+
+                        <i class="material-icons right">cloud_done</i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="adminModal_Add" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix"></i>
+                        <input id="usrempid" type="text" class="validate" required="" aria-required="true">
+                        <label for="usrempid">Employee ID</label>
+                    </div>
+
+                    <div class="col s4">
+                        <div class="input-field col s12">
+                            <select id="user_role">
+
+                                <option value="projectmanager">Project Manager</option>
+                                <option value="scrummaster" selected>Scrum Master</option>
+                                <option value="teammember">Team Member</option>
+                                <option value="billingmanager">Billing Manager</option>
+                            </select>
+                            <label>Role</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">group</i>
+                        <input id="user_team" type="text" class="validate" required="" aria-required="true">
+                        <label for="user_team">Team Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="usrName" type="text" class="validate" required="" aria-required="true">
+                        <label for="usrName">Username</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">star</i>
+                        <input id="usrPwd" type="text" class="validate" required="" aria-required="true">
+                        <label for="usrPwd">Default Password</label>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <button id="admin_add"
+                            class="btn themeColor hoverable right">Add
+                        <i class="material-icons right">done</i>
+                    </button>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="navigation-panel">
+
+        <ul id="slide-out" class="sidenav sidenav-fixed sideNav_bg">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="images/office.jpg">
+                    </div>
+                    <a id="#userImage"><img class="circle" src="images/yuna.jpg"></a>
+                    <a id="profile_name"><span class="white-text name"></span></a>
+                    <a id="profile_role"><span class="white-text role"></span></a>
+                    <a id="profile_email"><span class="white-text email"></span></a>
+                </div>
+            </li>
+            <li><a href="#!"><i class="material-icons">cloud</i>Profile Viewing</a></li>
+            <li class="pv_name">
+                <a href="#!">
+                    <div class="chip truncate black-text">
+                        <img src="images/woman_profile_icon.png" alt="Team Member">
+                        Searched Name
+                    </div>
+                </a>
+            </li>
+            <li class="pv_teamName">
+                <a href="#!">
+                    <div class="chip truncate black-text">
+                        <img src="images/team_icon.jpg" alt="Team Name">
+                        Searched Team
+                    </div>
+                </a>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+
+            <li><a href="#!" class="drb drbanner waves-effect drb_add">Add</a></li>
+            <li><a href="#!" class="drb drbanner waves-effect drb_update">Update</a></li>
+            <li><a href="#!" class="drb drbanner waves-effect drb_delete">Delete</a></li>
+            <li id="calendar"><a class="waves-effect" href="#!">Calendar</a></li>
+            <li id="drb_roles" class="" style="position: relative"><a class="waves-effect" href="#!">
+                Roles
+            </a></li>
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="search-container row">
+            <div class="col s8">
+                <div class="input-field col s9">
+                    <i class="material-icons prefix search_icon" id="searchEmp">search</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Enter Name (or) Employee ID (or) Email</label>
+
+                </div>
+                <div class="col clearSearch s2">
+                    <div class="chip">clear<i class="close material-icons">close</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col s3" style="margin-top: 15px; display: none;">
+                <div class="carousel carousel-slider center">
+                    <!-- <div class="carousel-fixed-item center">
+                         <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                     </div>-->
+                    <div class="carousel-item red white-text" href="#one!">
+                        <h2>Leaves Taken</h2>
+                        <h5 class="white-text">August 2018</h5>
+                        <h1 class="counters white-text z-depth-3">8</h1>
+                    </div>
+                    <div class="carousel-item amber white-text" href="#two!">
+                        <h2>Leaves Applied</h2>
+                        <h5 class="white-text">August 2018</h5>
+                        <h1 class="counters white-text z-depth-3">5</h1>
+                    </div>
+                    <div class="carousel-item green white-text" href="#three!">
+                        <h2>Leaves To Be Applied</h2>
+                        <h5 class="white-text">August 2018</h5>
+                        <h1 class="counters white-text z-depth-3">3</h1>
+                    </div>
+                    <div class="carousel-item blue white-text" href="#four!">
+                        <h2>Next</h2>
+                        <h2>Planned Leave</h2>
+                        <h2>is on</h2>
+                        <h4 class="white-text">25 Aug, 2018</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s1 quick_action">
+                <div class="fixed-action-btn click-to-toggle">
+                    <a class="btn-floating btn-large themeColor">
+                        <i class="large material-icons">menu</i>
+                    </a>
+                    <ul>
+                        <li id="addAssociates" class="tooltipped" data-position="left" data-tooltip="Add Member"><a
+                                class="btn-floating green"><i class="material-icons">person_add
+                        </i></a></li>
+                        <li id="login" class="tooltipped" data-position="left" data-tooltip="Login"><a
+                                class="btn-floating yellow darken-1"><i class="material-icons">vpn_key</i></a>
+                        </li>
+                        <li id="logout" class="tooltipped" data-position="left" data-tooltip="Logout"><a
+                                class="btn-floating red"><i class="material-icons">exit_to_app</i></a></li>
+                        <li class="tooltipped" data-position="left" data-tooltip="Home"><a
+                                class="btn-floating blue"><i class="material-icons">home</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="row leavesPlaceholder" style="margin-left: 50px;">
+                <div class="col s8">
+                    <div class="chips chips-autocomplete"></div>
+                </div>
+                <div class="col s4">
+                    <button class="btn waves-effect waves-light themeColor save_dates" type="submit" name="action">
+                        Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="row datePickerRegion">
+                <input type="text" class="datepicker" style="display: none">
+                <div id="dpForLeaves" class="col datePickerContainer s8"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="js/materialize.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<script>
+
+</script>
+</body>
+</html>

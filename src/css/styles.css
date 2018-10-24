@@ -1,0 +1,74 @@
+.loader {
+    z-index: 9999;
+    display: block;
+    opacity: 0.6;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+}
+
+h1.counters {
+    font-size: 10rem !important;
+}
+
+.carousel {
+
+}
+
+.multiSelectDates {
+    background-color: #26a69a !important;
+    color: #fff !important;
+}
+
+#addMember, #add_new_member {
+    display: none;
+}
+
+.drbanner {
+    display: none !important;
+}
+
+.drbanner_show {
+    display: block !important;
+}
+
+.leavesPlaceholder {
+    display: none;
+}
+
+.quick_action .fixed-action-btn {
+    top: 2% !important;
+    bottom: auto;
+}
+
+body {
+    background: #ffffff;
+}
+
+.themeColor {
+    background-color: #26a69a !important;
+}
+
+.myContainer {
+    width: -webkit-calc(100% - 300px);
+    width: -moz-calc(100% - 300px);
+    width: calc(100% - 300px);
+    margin-left: 300px;
+}
+
+.clearSearch {
+    margin: 1rem 0;
+    display: none;
+}
+
+.sideNav_bg {
+    background-color: #26a69a !important;
+}
+
+.search_icon, .clearSearch_icon {
+    cursor: pointer;
+}
